@@ -1,4 +1,1 @@
-*{
-  padding:0;
-  margin:0;
-}
+*{margin:0;padding:0}.announcement{display:flex;justify-content:center;align-items:center;height:25px;width:100%;text-align:center;color:#1e1eae}.headNav{display:flex;align-items:center;background-color:#0000a3;width:100%;height:6cqh}.headNav a{color:#fff;text-decoration:none}.headNav .logo p{margin-left:10px;font-size:25px;font-weight:900;font-family:Arial,Helvetica,sans-serif}/*# sourceMappingURL=style.css.map */
