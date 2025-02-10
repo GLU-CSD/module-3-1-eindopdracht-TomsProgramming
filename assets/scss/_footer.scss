@@ -1,0 +1,37 @@
+footer {
+    margin-top: 50px;
+    border-top: 2px solid #0000A3;
+
+    .footerContent {
+        display: flex;
+        padding: 20px;
+
+        .column {
+            flex: 1;
+            margin-right: 20px;
+
+            ul {
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: #000000;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    
+        .column:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .footerBottom {
+        text-align: center;
+        padding: 10px;
+        background-color: #f1f1f1;
+    }
+}

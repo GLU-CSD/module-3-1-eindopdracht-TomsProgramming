@@ -1,0 +1,39 @@
+main {
+    .productsContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+
+        .product {
+            margin-left: 100px;
+
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+
+            width: 100px;
+
+            img {
+                width: 90px;
+            }
+
+            .addToCart {
+                background-color: #0000A3;
+                color: #ffffff;
+                border: none;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+                margin-top: 10px;
+
+                &:hover {
+                    background-color: #000069;
+                }
+            }
+        }
+    }
+}

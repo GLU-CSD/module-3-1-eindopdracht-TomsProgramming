@@ -1,2 +1,2 @@
-sass assets/scss/main.scss assets/css/style.css --style=compressed
-sass --watch assets/scss/main.scss:assets/css/style.css --style=compressed
+sass assets/scss/core.scss assets/css/style.css --style=compressed
+sass --watch assets/scss/core.scss:assets/css/style.css --style=compressed

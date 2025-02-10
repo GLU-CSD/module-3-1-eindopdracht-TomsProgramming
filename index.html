@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>SimpelWinkelen</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <meta name="description" content="">
 
@@ -20,6 +20,7 @@
 
     <meta name="theme-color" content="#fafafa">
 
+    <script src="https://kit.fontawesome.com/0fa38cfac4.js" crossorigin="anonymous" defer></script>
     <script src="assets/js/app.js" defer></script>
 </head>
 
@@ -29,7 +30,79 @@
     </div>
     <nav class="headNav">
         <a href="/" class="logo"><p>Simpel Winkelen</p></a>
+        <form class="search">
+            <input type="text" placeholder="Waar ben je naar op zoek?">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <button class="rightSideBtn user"><i class="fa-regular fa-user"></i></button>
+        <button class="rightSideBtn cart"><i class="fa fa-shopping-cart"></i></button>
     </nav>
+    <div class="sidebar">
+        <div class="dropdown">
+            <button class="dropBtn">Categorieën <i class="fa fa-caret-down"></i></button>
+            <div class="dropdownContent">
+                <a href="#">Laptosps</a>
+                <a href="#">Smartphones</a>
+                <a href="#">Tablets</a>
+                <a href="#">Accessoires</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropBtn">Prijs <i class="fa fa-caret-down"></i></button>
+            <div class="dropdownContent">
+                <a href="#">Laag naar hoog</a>
+                <a href="#">Hoog naar laag</a>
+            </div>
+        </div>
+    </div>
+    <main>
+        <!-- <div class="productsContainer">
+            <div class="product">
+                <img src="assets/img/handschoenen.jpg" alt="Laptop">
+                <h3>Laptop</h3>
+                <p>€ 499,99</p>
+                <button class="addToCart"><i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div> -->
+    </main>
+    <footer>
+        <div class="footerContent">
+            <div class="column">
+                <h3>Over ons</h3>
+                <p>Wij zijn een webshop die zich richt op het verkopen van producten voor een scherpe prijs.</p>
+            </div>
+            <div class="column">
+                <h3>Producten</h3>
+                <ul>
+                    <li><a href="#">Laptops</a></li>
+                    <li><a href="#">Smartphones</a></li>
+                    <li><a href="#">Tablets</a></li>
+                    <li><a href="#">Accessoires</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Veelgestelde vragen</a></li>
+                    <li><a href="#">Retourneren</a></li>
+                    <li><a href="#">Garantie</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Volg ons</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <p>&copy; 2025 Simpel Winkelen</p>
+        </div>
+    </footer>
 </body>
 
 </html>
