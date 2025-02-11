@@ -1,16 +1,59 @@
 .sidebar {
-    width: 250px;
+    width: 200px;
     height: 100%;
 
     .dropdown {
         
         .dropBtn{
-            background-color: #4CAF50;
-            color: white;
+            color: #000000;
+            background-color: #ffffff;
             padding: 16px;
             font-size: 16px;
             border: none;
+            border-bottom: 2px solid #c7c7c7;
+            width: 100%;
+            text-align: left;
             cursor: pointer;
+
+            i {
+                float: right;
+            }
+        }
+
+        .dropdownContent {
+            display: none;
+            flex-direction: column; 
+    
+            .dropdownBtn {
+                padding: 16px 0px 16px 16px;
+                font-size: 16px;
+                border: none;
+                
+                text-align: left;
+                cursor: pointer;
+    
+                background-color: #ffffff;
+                border: none;
+    
+                text-decoration: none;
+                color: #000000;
+    
+                &:hover {
+                    color: #0000A3;
+                }
+            }
+        }
+
+        .show {
+            display: flex;
+            opacity: 0;
+            animation: fadeIn 0.3s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
     }
 }
