@@ -1,4 +1,9 @@
 main {
+    display: flex;
+    position: relative;
+    top: 0px;
+    left: 250px;
+
     .productsContainer {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

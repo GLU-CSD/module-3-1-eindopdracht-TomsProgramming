@@ -3,7 +3,7 @@ export function open(element){
         return;
     }
 
-    const dropdownContent = element.parentElement.querySelector('.dropdownContent');
+    const dropdownContent = element.parentElement.parentElement.querySelector('.dropdownContent');
     const buttonIcon = element.querySelector('i');
     if(dropdownContent){
         dropdownContent.classList.toggle('show');

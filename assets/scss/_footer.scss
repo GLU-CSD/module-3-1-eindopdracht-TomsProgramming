@@ -1,5 +1,7 @@
 footer {
-    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-top: 2px solid #0000A3;
 
     .footerContent {
@@ -31,7 +33,8 @@ footer {
 
     .footerBottom {
         text-align: center;
-        padding: 10px;
+        width: 100%;
+        padding: 10px 0px;
         background-color: #f1f1f1;
     }
 }

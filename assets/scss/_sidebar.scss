@@ -1,9 +1,11 @@
 .sidebar {
     width: 200px;
-    height: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: stretch;
 
     .dropdown {
-        
         .dropBtn{
             color: #000000;
             background-color: #ffffff;
@@ -35,11 +37,13 @@
                 background-color: #ffffff;
                 border: none;
     
-                text-decoration: none;
-                color: #000000;
-    
-                &:hover {
-                    color: #0000A3;
+                a {
+                    text-decoration: none;
+                    color: #000000;
+        
+                    &:hover {
+                        color: #0000A3;
+                    }
                 }
             }
         }

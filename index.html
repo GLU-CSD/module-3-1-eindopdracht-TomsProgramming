@@ -1,18 +1,24 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="nl">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SimpelWinkelen</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <meta name="description" content="">
+    <meta name="description" content="SimpelWinkelen - Dé plek voor laptops, smartphones, tablets en accessoires tegen scherpe prijzen. Bestel eenvoudig online!">
 
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
+    <meta property="og:title" content="SimpelWinkelen - Betaalbare Elektronica">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://simpelwinkelen.com">
     <meta property="og:image" content="">
-    <meta property="og:image:alt" content="">
+    <meta property="og:image:alt" content="SimpelWinkelen webshop">
+    <meta property="og:description" content="Vind de beste laptops, smartphones en accessoires tegen scherpe prijzen bij SimpelWinkelen.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SimpelWinkelen - Betaalbare Elektronica">
+    <meta name="twitter:description" content="Vind de beste laptops, smartphones en accessoires tegen scherpe prijzen bij SimpelWinkelen.">
+    <meta name="twitter:image" content="">
 
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
@@ -28,34 +34,58 @@
     <div class="announcement">
         <p><strong>Let op:</strong> Dit is een testwebsite voor school. Bestellen is niet mogelijk.</p>
     </div>
-    <nav class="headNav">
-        <a href="/" class="logo"><p>Simpel Winkelen</p></a>
-        <form class="search">
-            <input type="text" placeholder="Waar ben je naar op zoek?">
+    <nav class="headNav" aria-label="Hoofdmenu">
+        <a href="/" class="logo">
+            <p>SimpelWinkelen</p>
+        </a>
+        <form class="search" action="/zoeken" method="get">
+            <input type="text" id="searchInput" name="q" placeholder="Waar ben je naar op zoek?">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
         <button class="rightSideBtn user"><i class="fa-regular fa-user"></i></button>
         <button class="rightSideBtn cart"><i class="fa fa-shopping-cart"></i></button>
     </nav>
-    <div class="sidebar">
+    
+    <nav class="sidebar" role="navigation" aria-label="Productfilters">
         <div class="dropdown">
-            <button class="dropBtn" onclick="dropdown.open(this)">Categorieën <i class="fa fa-caret-down"></i></button>
+            <h2>
+                <button class="dropBtn" onclick="dropdown.open(this)" aria-expanded="false">
+                    Categorieën <i class="fa fa-caret-down"></i>
+                </button>
+            </h2>
             <div class="dropdownContent">
-                <a class="dropdownBtn" href="#">Laptosps</a>
-                <a class="dropdownBtn" href="#">Smartphones</a>
-                <a class="dropdownBtn" href="#">Tablets</a>
-                <a class="dropdownBtn" href="#">Accessoires</a>
+                <ul>
+                    <li class="dropdownBtn"><a href="/categorie/laptops">Laptops</a></li>
+                    <li class="dropdownBtn"><a href="/categorie/smartphones">Smartphones</a></li>
+                    <li class="dropdownBtn"><a href="/categorie/tablets">Tablets</a></li>
+                    <li class="dropdownBtn"><a href="/categorie/accessoires">Accessoires</a></li>
+                </ul>
             </div>
         </div>
+
         <div class="dropdown">
-            <button class="dropBtn" onclick="dropdown.open(this)">Prijs <i class="fa fa-caret-down"></i></button>
+            <h2>
+                <button class="dropBtn" onclick="dropdown.open(this)" aria-expanded="false">
+                    Prijs <i class="fa fa-caret-down"></i>
+                </button>
+            </h2>
             <div class="dropdownContent">
-                <a class="dropdownBtn" href="#">Laag naar hoog</a>
-                <a class="dropdownBtn" href="#">Hoog naar laag</a>
+                <ul>
+                    <li><a href="/zoeken?sort=prijs-laag-hoog">Laag naar hoog</a></li>
+                    <li><a href="/zoeken?sort=prijs-hoog-laag">Hoog naar laag</a></li>
+                </ul>
             </div>
         </div>
-    </div>
+    </nav>
+
     <main>
+        <section class="hero">
+        <div class="hero-content">
+            <h1>Betaalbare Elektronica voor Iedereen</h1>
+            <p>Ontdek de beste deals voor laptops, smartphones en accessoires. Bestel eenvoudig online!</p>
+            <a href="/categorie/alle-producten" class="cta-button">Bekijk Aanbiedingen</a>
+        </div>
+    </section>
         <!-- <div class="productsContainer">
             <div class="product">
                 <img src="assets/img/handschoenen.jpg" alt="Laptop">
