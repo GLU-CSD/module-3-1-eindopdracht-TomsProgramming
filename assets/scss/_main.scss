@@ -1,8 +1,6 @@
 main {
-    display: flex;
-    position: relative;
-    top: 0px;
-    left: 250px;
+    flex: 1;
+    padding: 20px;
 
     .productsContainer {
         display: grid;

@@ -4,23 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SimpelWinkelen - Betaalbare Elektronica</title>
+    <title>SimpelWinkelen</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <meta name="description"
-        content="SimpelWinkelen - Dé plek voor laptops, smartphones, tablets en accessoires tegen scherpe prijzen. Bestel eenvoudig online!">
+    <meta name="description" content="SimpelWinkelen - Dé plek voor laptops, smartphones, tablets en accessoires tegen scherpe prijzen. Bestel eenvoudig online!">
 
     <meta property="og:title" content="SimpelWinkelen - Betaalbare Elektronica">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://simpelwinkelen.com">
     <meta property="og:image" content="">
     <meta property="og:image:alt" content="SimpelWinkelen webshop">
-    <meta property="og:description"
-        content="Vind de beste laptops, smartphones en accessoires tegen scherpe prijzen bij SimpelWinkelen.">
+    <meta property="og:description" content="Vind de beste laptops, smartphones en accessoires tegen scherpe prijzen bij SimpelWinkelen.">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SimpelWinkelen - Betaalbare Elektronica">
-    <meta name="twitter:description"
-        content="Vind de beste laptops, smartphones en accessoires tegen scherpe prijzen bij SimpelWinkelen.">
+    <meta name="twitter:description" content="Vind de beste laptops, smartphones en accessoires tegen scherpe prijzen bij SimpelWinkelen.">
     <meta name="twitter:image" content="">
 
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -48,16 +45,41 @@
         <button class="rightSideBtn user"><i class="fa-regular fa-user"></i></button>
         <button class="rightSideBtn cart"><i class="fa fa-shopping-cart"></i></button>
     </nav>
-
+    
     <div class="contentWrapper">
-        <main>
-            <section class="hero">
-                <div class="hero-content">
-                    <h1>Betaalbare Elektronica voor Iedereen</h1>
-                    <p>Ontdek de beste deals voor laptops, smartphones en accessoires. Bestel eenvoudig online!</p>
-                    <a href="/categorie/alle-producten" class="cta-button">Bekijk Aanbiedingen</a>
+        <nav class="sidebar" role="navigation" aria-label="Productfilters">
+            <div class="dropdown">
+                <h2>
+                    <button class="dropBtn" onclick="dropdown.open(this)" aria-expanded="false">
+                        Categorieën <i class="fa fa-caret-down"></i>
+                    </button>
+                </h2>
+                <div class="dropdownContent">
+                    <ul>
+                        <li class="dropdownBtn"><a href="/categorie/laptops">Laptops</a></li>
+                        <li class="dropdownBtn"><a href="/categorie/smartphones">Smartphones</a></li>
+                        <li class="dropdownBtn"><a href="/categorie/tablets">Tablets</a></li>
+                        <li class="dropdownBtn"><a href="/categorie/accessoires">Accessoires</a></li>
+                    </ul>
                 </div>
-            </section>
+            </div>
+
+            <div class="dropdown">
+                <h2>
+                    <button class="dropBtn" onclick="dropdown.open(this)" aria-expanded="false">
+                        Prijs <i class="fa fa-caret-down"></i>
+                    </button>
+                </h2>
+                <div class="dropdownContent">
+                    <ul>
+                        <li><a href="/zoeken?sort=prijs-laag-hoog">Laag naar hoog</a></li>
+                        <li><a href="/zoeken?sort=prijs-hoog-laag">Hoog naar laag</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
             <!-- <div class="productsContainer">
                 <div class="product">
                     <img src="assets/img/handschoenen.jpg" alt="Laptop">
