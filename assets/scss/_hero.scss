@@ -1,10 +1,70 @@
 .hero {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    h1 {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 2.5rem;
+    width: 100%;
+    background-color: #F0F4FC;
+
+    gap: 50px;
+    padding: 20px 0px;
+
+    a {
+        width: 100%;
+
+        background-color: #0000A3;
+        color: #ffffff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
         font-weight: 700;
-        margin-bottom: 1rem;
+
+        &:hover {
+            background-color: #000069;
+        }
+    }
+
+    .heroContent {
+        margin-right: 50px;
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+
+            span {
+                display: block;
+            }
+        }
+
+        p {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: rgb(131, 131, 131);
+        }
+    }
+
+    .heroItem {
+        float: left;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+
+        img {
+            
+        }
+
+        .productInfo {
+            .brand {
+                font-weight: 700;
+                margin-bottom: 0px;
+            }
+
+            p {
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+        }
     }
 }
