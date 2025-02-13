@@ -1,0 +1,35 @@
+.emptyCartContainer {
+    background-color: #EDF3FF;
+    height: 300px;
+    padding: 20px;
+    text-align: left;
+
+    .empty {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            margin-top: 70px;
+            font-size: 50px;
+            font-weight: 700;
+            color: #0000A4;
+        }
+
+        a {
+            margin-top: 70px;
+            background-color: #0000A3;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 700;
+
+            &:hover {
+                background-color: #000069;
+            }
+        }
+    }
+}
