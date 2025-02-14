@@ -2,9 +2,11 @@
 @use './includes/announcement';
 @use './includes/headNav';
 
-@use './includes/cartMain';
+@use './includes/cart/cartMain';
 
-@use './includes/emptyCartContainer';
-@use './includes/cartContainer';
+@use './includes/cart/emptyCartContainer';
+@use './includes/cart/cartContainer';
+@use './includes/cart/cartItems';
+@use './includes/cart/cartCheckout';
 
 @use './includes/footer';

@@ -1,0 +1,45 @@
+.cartCheckout {
+    width: 275px;
+    height: 220px;
+    border: 1px solid #D8D8D8;
+    border-radius: 5px;
+    padding: 20px;
+
+    .cost {
+        margin-top: 10px;
+
+        table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: separate;
+            border-spacing: 0 10px;
+        }
+
+        .costName {
+            text-align: left;
+        }
+
+        .costPrice {
+            text-align: right;
+        }
+
+        .totalPrice {
+            font-weight: 700;
+        }
+    }
+
+    a {
+        display: block;
+        padding: 10px;
+        background-color: #0000A3;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        margin-top: 20px;
+        text-decoration: none;
+
+        &:hover {
+            background-color: #000069;
+        }
+    }
+}

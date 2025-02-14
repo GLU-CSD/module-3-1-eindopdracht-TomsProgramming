@@ -6,7 +6,7 @@ $title = "SimpelWinkelen - Betaalbare Elektronica";
 <head>
     <?php include "includes/head.php"; ?>
 
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/index.css?v=<?php echo filemtime('assets/css/index.css') ?>">
     <script src="https://kit.fontawesome.com/0fa38cfac4.js" crossorigin="anonymous" defer></script>
     <script src="assets/js/index.js" defer></script>
 </head>

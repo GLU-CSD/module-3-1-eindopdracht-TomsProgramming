@@ -24,35 +24,83 @@ $title = "Winkelwagen - SimpelWinkelen";
             </div>
         </div> -->
         <div class="cartContainer">
-            <div class="cartItem">
-                <img src="./assets/img/iphone-16-pro.png" alt="Iphone 16 Pro">
-                <div class="productInfo">
-                    <p class="brand">Apple</p>
-                    <h3>iPhone 16 Pro</h3>
-                    <p class="price">€ 999,99</p>
-                    <!-- <div class="quantity">
-                        <button>-</button>
-                        <input type="number" value="1">
-                        <button>+</button>
-                    </div> -->
-                    <button class="remove">Verwijderen</button>
+            <div class="cartItems">
+                <div class="cartItem">
+                    <img src="./assets/img/iphone-16-pro.png" alt="Iphone 16 Pro">
+                    <div class="productInfo">
+                        <p class="brand">Apple</p>
+                        <h3>iPhone 16 Pro</h3>
+                        <p class="price">€ 999,99</p>
+                        <div class="actions">
+                            <div class="quantity">
+                                <select name="quantitySelect" id="quantitySelect">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="more">Meer</option>
+                                </select>
+                            </div>
+                            <button class="remove"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cartItem">
+                    <img src="./assets/img/iphone-16-pro.png" alt="Iphone 16 Pro">
+                    <div class="productInfo">
+                        <p class="brand">Apple</p>
+                        <h3>iPhone 16 Proddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</h3>
+                        <p class="price">€ 999,99</p>
+                        <div class="actions">
+                            <div class="quantity">
+                                <select name="quantitySelect" id="quantitySelect">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="more">Meer</option>
+                                </select>
+                            </div>
+                            <button class="remove"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- 
-            <div class="cartItem">
-                <img src="./assets/img/galaxy-s25-ultra.png" alt="Samsung Galaxy S25 Ultra">
-                <div class="productInfo">
-                    <p class="brand">Samsung</p>
-                    <h3>Galaxy S25 Ultra</h3>
-                    <p class="price">€ 999,99</p>
-                    <div class="quantity">
-                        <button>-</button>
-                        <input type="number" value="1">
-                        <button>+</button>
-                    </div>
-                    <button class="remove">Verwijderen</button>
+            <div class="cartCheckout">
+                <h2>Overzicht</h2>
+                <div class="cost">
+                    <table>
+                        <tr>
+                            <td class="costName">Artikelen (2)</td>
+                            <td class="costPrice">€ 36,91</td>
+                        </tr>
+                        <tr>
+                            <td class="costName">Verzendkosten</td>
+                            <td class="costPrice">€ 0,00</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><hr></td>
+                        </tr>
+                        <tr>
+                            <td class="costName">Totaal</td>
+                            <td class="costPrice totalPrice">€ 36,91</td>
+                        </tr>
+                    </table>
                 </div>
-            </div> -->
+                <a href="/bestellen">Verder naar bestellen</a>
+            </div>
         </div>
     </main>
     <?php include "includes/footer.php"; ?>

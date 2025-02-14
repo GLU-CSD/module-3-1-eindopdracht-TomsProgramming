@@ -1,0 +1,85 @@
+.cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+
+    .cartItem {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
+        border: 1px solid #D8D8D8;
+        border-radius: 5px;
+        padding: 20px;
+        position: relative;
+
+        img {
+            width: 160px;
+            height: auto;
+            margin-right: 20px;
+            align-self: flex-start;
+        }        
+
+        .productInfo {
+            align-items: flex-start;
+            margin-top: 10px;
+
+            .brand {
+                color: rgb(128, 128, 128);
+                font-size: 15px;
+                font-weight: 700;
+            }
+
+            h3 {
+                margin-top: 5px;
+                font-size: 18px;
+                overflow-wrap: break-word;
+                word-break: break-all;
+            }
+
+            .price {
+                font-size: 17px;
+                font-weight: 700;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                margin-top: 0;
+            }
+
+
+            .actions {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+                margin-top: 20px;
+
+                .quantity select {
+                    padding: 10px;
+                    font-size: 15px;
+                    border: 1px solid #D8D8D8;
+                    border-radius: 5px;
+                }
+
+                .remove {
+                    background-color: transparent;
+                    border: 2px solid transparent;
+                    border-radius: 5px;
+
+                    color: #0000A3;
+                    font-size: 25px;
+                    padding: 7.5px;
+                    font-weight: 700;
+                    cursor: pointer;
+
+                    transition: border-color 0.3s;
+
+                    &:hover {
+                        border-color: #0000A3;
+                    }
+                }
+            }
+        }
+    }
+}
