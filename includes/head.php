@@ -1,4 +1,3 @@
-<base href="/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo $title ?></title>
@@ -21,3 +20,5 @@
 <link rel="apple-touch-icon" href="icon.png">
 
 <meta name="theme-color" content="#fafafa">
+
+<script src="https://kit.fontawesome.com/0fa38cfac4.js" crossorigin="anonymous" defer></script>

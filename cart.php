@@ -1,10 +1,13 @@
 <?php
+require "config.php";
+
 $title = "Winkelwagen - SimpelWinkelen";
 ?>
 <!doctype html>
 <html class="no-js" lang="nl">
 
 <head>
+    <?php include "includes/basePath.php"; ?>
     <?php include "includes/head.php"; ?>
 
     <link rel="stylesheet" href="assets/css/cart.css">

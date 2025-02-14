@@ -1,3 +1,7 @@
 sass assets/scss/core.scss assets/css/style.css --style=compressed
+
 sass --watch assets/scss/index.scss:assets/css/index.css --style=compressed
 sass --watch assets/scss/cart.scss:assets/css/cart.css --style=compressed
+sass --watch assets/scss/product.scss:assets/css/product.css --style=compressed
+
+sass --watch account/assets/scss/login.scss:account/assets/css/login.css --style=compressed

@@ -1,4 +1,7 @@
 RewriteEngine On
 RewriteBase /
 
-RewriteRule ^cart/?$ cart.php [L,QSA]
+RewriteRule ^winkelwagen/?$ cart.php [L,QSA]
+RewriteRule ^account/?$ account/index.php [L,QSA]
+RewriteRule ^inloggen/?$ account/login.php [L,QSA]
+RewriteRule ^registreren/?$ account/register.php [L,QSA]
