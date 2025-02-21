@@ -21,7 +21,7 @@ if(isset($_GET['category'], $_GET['brand'], $_GET['model'])){
         $mainImage = $product['mainImage'];
         $prodcutTitle = $product['title'];
         $price = str_replace('.', ',', $product['price']);
-        $description = $product['description'];
+        $description = str_replace('\u0027', "'", $product['description']);
 
         $title = $product['title'] . " - " . $name;
 ?>

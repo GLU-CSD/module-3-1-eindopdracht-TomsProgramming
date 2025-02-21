@@ -5,7 +5,7 @@ class Products
     {
         global $conn;
 
-        $query = "SELECT * FROM products";
+        $query = "SELECT id, category, brand, name, title, price, mainImage FROM products";
         $conditions = [];
         $params = [];
 
@@ -28,7 +28,6 @@ class Products
             $query .= " LIMIT :limit";
             $params[':limit'] = $limit;
         }
-
         $selectProducts = $conn->prepare($query);
         foreach ($params as $key => $value) {
             if ($key === ':limit') {
@@ -37,9 +36,9 @@ class Products
                 $selectProducts->bindValue($key, $value);
             }
         }
+
         $selectProducts->execute();
         $products = $selectProducts->fetchAll(PDO::FETCH_ASSOC);
-
         echo json_encode(array("success" => true, "products" => $products));
     }
 

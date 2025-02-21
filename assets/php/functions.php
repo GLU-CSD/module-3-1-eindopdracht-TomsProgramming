@@ -7,7 +7,7 @@ header('Content-Type: application/json');
 $raw_post_data = file_get_contents('php://input');
 $post_data = json_decode($raw_post_data, true);
 
-if($post_data['function']){
+if(isset($post_data['function'])){
     $function = $post_data['function'];
 
     if($function === 'getProducts' && isset($post_data['category'])){

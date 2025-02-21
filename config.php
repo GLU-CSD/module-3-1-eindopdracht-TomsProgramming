@@ -19,7 +19,7 @@ $ipAddress = "";
 $userAgent = "";
 
 try {
-    $conn = new PDO("mysql:host=localhost;dbname=webshop", "tom", "ytz.HMW_pvn!yqv8kpr");
+    $conn = new PDO("mysql:host=localhost;dbname=u240066_webshop", "u240066_webshop", "VM6Q9kYpZgTgpvN83kqy");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
