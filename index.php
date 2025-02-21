@@ -1,5 +1,11 @@
 <?php
-$title = "SimpelWinkelen - Betaalbare Elektronica";
+require 'config.php';
+
+$selectNewestProducts = $conn->prepare("SELECT * FROM products ORDER BY createdAt DESC LIMIT 2");
+$selectNewestProducts->execute();
+$newestProducts = $selectNewestProducts->fetchAll();
+
+$title = "Betaalbare Elektronica - " . $name;
 ?>
 <!doctype html>
 <html class="no-js" lang="nl">
@@ -20,77 +26,25 @@ $title = "SimpelWinkelen - Betaalbare Elektronica";
             <div class="heroContent">
                 <h1>Betaalbare Elektronica <span> </span> voor Iedereen</h1>
                 <p>Ontdek de beste deals voor laptops, smartphones en accessoires.<br> Bestel eenvoudig online!</p>
-                <a href="/categorie/alle-producten" class="cta-button">Bekijk Aanbiedingen</a>
+                <a href="/producten" class="cta-button">Bekijk Producten</a>
             </div>
-            <div class="heroItem first">
-                <img src="./assets/img/iphone-16-pro.png" alt="Iphone 16 Pro" loading="lazy">
-                <div class="productInfo">
-                    <p class="brand">Apple</p>
-                    <h3>iPhone 16 Pro</h3>
-                    <p class="price">€ 999,99</p>
-                    <a href="" class="product-button">Bekijken</a>
+            <?php 
+            foreach($newestProducts as $product){
+                echo '
+                <div class="heroItem">
+                    <img src="./uploads/img/'.$product['id'].'/'.$product['mainImage'].'" alt="'.$product['title'].'" loading="lazy">
+                    <div class="productInfo">
+                        <p class="brand">'.$product['brand'].'</p>
+                        <h3>'.$product['title'].'</h3>
+                        <p class="price">&euro; '.str_replace('.', ',', $product['price']).'</p>
+                        <a href="/'.$product['category'].'/'.$product['brand'].'/'.$product['name'].'" class="product-button">Bekijken</a>
+                    </div>
                 </div>
-            </div>
-            <div class="heroItem second">
-                <img src="./assets/img/galaxy-s25-ultra.png" alt="Samsung Galaxy S25 Ultra" loading="lazy">
-                <div class="productInfo">
-                    <p class="brand">Samsung</p>
-                    <h3>Galaxy S25 Ultra</h3>
-                    <p class="price">€ 999,99</p>
-                    <a href="" class="product-button">Bekijken</a>
-                </div>
-            </div>
+                ';
+            }
+            ?>
         </section>
-        <div class="productsContainer">
-            <div class="category">
-                <h2>Populaire Telefoons</h2>
-                <div class="product">
-                    <img src="./assets/img/iphone-16-pro.png" alt="Iphone 16 Pro" loading="lazy">
-                    <div class="productInfo">
-                        <p class="brand">Apple</p>
-                        <h3>iPhone 16 Pro</h3>
-                        <p class="price">€ 999,99</p>
-                        <a href="" class="product-button">Bekijken</a>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="./assets/img/iphone-16-pro.png" alt="Iphone 16 Pro" loading="lazy">
-                    <div class="productInfo">
-                        <p class="brand">Apple</p>
-                        <h3>iPhone 16 Pro</h3>
-                        <p class="price">€ 999,99</p>
-                        <a href="" class="product-button">Bekijken</a>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="./assets/img/iphone-16-pro.png" alt="Iphone 16 Pro" loading="lazy">
-                    <div class="productInfo">
-                        <p class="brand">Apple</p>
-                        <h3>iPhone 16 Pro</h3>
-                        <p class="price">€ 999,99</p>
-                        <a href="" class="product-button">Bekijken</a>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="./assets/img/iphone-16-pro.png" alt="Iphone 16 Pro" loading="lazy">
-                    <div class="productInfo">
-                        <p class="brand">Apple</p>
-                        <h3>iPhone 16 Pro</h3>
-                        <p class="price">€ 999,99</p>
-                        <a href="" class="product-button">Bekijken</a>
-                    </div>
-                </div>
-                <div class="product">
-                    <img src="./assets/img/iphone-16-pro.png" alt="Iphone 16 Pro" loading="lazy">
-                    <div class="productInfo">
-                        <p class="brand">Apple</p>
-                        <h3>iPhone 16 Pro</h3>
-                        <p class="price">€ 999,99</p>
-                        <a href="" class="product-button">Bekijken</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="productsContainer"></div>
     </main>
     <?php include "includes/footer.php"; ?>
 </body>

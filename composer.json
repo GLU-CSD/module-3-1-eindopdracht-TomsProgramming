@@ -1,0 +1,6 @@
+{
+    "require": {
+        "predis/predis": "^2.3",
+        "mobiledetect/mobiledetectlib": "^4.8"
+    }
+}

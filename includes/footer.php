@@ -33,6 +33,6 @@
         </div>
     </div>
     <div class="footerBottom">
-        <p>&copy; 2025 Simpel Winkelen</p>
+        <p>&copy; 2025 <?php echo $name ?></p>
     </div>
 </footer>

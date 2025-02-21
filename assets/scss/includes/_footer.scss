@@ -38,3 +38,19 @@ footer {
         background-color: #f1f1f1;
     }
 }
+
+@media (max-width: 768px) {
+    footer {
+        .footerContent {
+            flex-direction: column;
+            padding: 10px;
+
+            text-align: center;
+
+            .column {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

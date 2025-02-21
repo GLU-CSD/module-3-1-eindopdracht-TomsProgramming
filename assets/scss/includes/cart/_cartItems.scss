@@ -55,8 +55,9 @@
                 gap: 25px;
                 margin-top: 20px;
 
-                .quantity select {
-                    padding: 10px;
+                .quantity select, input {
+                    display: none;
+                    padding: 0.5em;
                     font-size: 15px;
                     border: 1px solid #D8D8D8;
                     border-radius: 5px;
@@ -78,6 +79,28 @@
                     &:hover {
                         border-color: #0000A3;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) { 
+    .cartItems {
+        width: 90%;
+
+        .cartItem {
+            padding: 0;
+            width: auto;
+
+            img {
+                width: 100px;
+                margin-right: 10px;
+            }
+
+            .productInfo {
+                .price {
+                    margin-top: -10px;
                 }
             }
         }

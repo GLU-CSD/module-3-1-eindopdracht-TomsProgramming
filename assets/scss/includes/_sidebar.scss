@@ -1,63 +1,208 @@
-.sidebar {
-    width: 200px;
+.contentWrapper {
     display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
+    gap: 20px;
+}
 
-    .dropdown {
-        .dropBtn{
-            color: #000000;
-            background-color: #ffffff;
-            padding: 16px;
+.sidebar {
+    display: block;
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+
+    h2 {
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: #0000a3;
+        font-weight: 700;
+        border-bottom: 2px solid #0000a3;
+        padding-bottom: 10px;
+    }
+
+    .filterGroup {
+        margin-bottom: 20px;
+
+        h3 {
+            margin-bottom: 10px;
             font-size: 16px;
-            border: none;
-            border-bottom: 2px solid #c7c7c7;
-            width: 100%;
-            text-align: left;
-            cursor: pointer;
-
-            i {
-                float: right;
-            }
+            font-weight: 700;
+            color: #000;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
         }
 
-        .dropdownContent {
-            display: none;
-            flex-direction: column; 
-    
-            .dropdownBtn {
-                padding: 16px 0px 16px 16px;
-                font-size: 16px;
-                border: none;
-                
-                text-align: left;
-                cursor: pointer;
-    
-                background-color: #ffffff;
-                border: none;
-    
-                a {
-                    text-decoration: none;
-                    color: #000000;
-        
-                    &:hover {
-                        color: #0000A3;
-                    }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin-bottom: 10px;
+
+                label {
+                    cursor: pointer;
+                    color: #000;
                 }
             }
         }
 
-        .show {
-            display: flex;
-            opacity: 0;
-            animation: fadeIn 0.3s forwards;
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 5px;
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
+
+        .range {
+            margin-top: 20px;
+
+            .rangeSlider {
+                height: 5px;
+                position: relative;
+                background-color: #e1e9f6;
+                border-radius: 2px;
+
+                .rangeSelected {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 1%;
+                    right: 0%;
+                    border-radius: 5px;
+                    background-color: #1b53c0;
+                }
             }
+
+            .rangeInput {
+                position: relative;
+
+                input {
+                    position: absolute;
+                    width: 100%;
+                    height: 5px;
+                    top: -5px;
+                    background: transparent;
+                    pointer-events: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+
+                    &::-webkit-slider-thumb {
+                        pointer-events: auto;
+                        -webkit-appearance: none;
+                        height: 20px;
+                        width: 20px;
+                        border: 3px solid #1b53c0;
+                        border-radius: 50%;
+                        background-color: #fff;
+                    }
+
+                    &::-moz-range-thumb {
+                        pointer-events: auto;
+                        height: 15px;
+                        width: 15px;
+                        border: 3px solid #1b53c0;
+                        border-radius: 50%;
+                        background-color: #fff;
+                    }
+                }
+            }
+
+            .rangePrice {
+                margin: 30px 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                label {
+                    margin-right: 5px;
+                }
+
+                input {
+                    width: 50px;
+                    padding: 5px;
+
+                    &:first-of-type {
+                        margin-right: 15px;
+                    }
+                }
+            }
+
         }
+    }
+
+    button[type="submit"] {
+        display: none;
+        background-color: #0000a3;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 700;
+        transition: background-color .3s ease;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #000069;
+    }
+}
+
+.sidebar .filterGroup .filterGroup .filterGroup ul .filterGroup ul li input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.filterGroup button[type="submit"] {
+    background-color: #0000a3;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color .3s ease;
+}
+
+.filterGroup button[type="submit"]:hover {
+    background-color: #000069;
+}
+
+.sidebarOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+@media screen and (max-width: 1000px) {
+    .sidebar {
+        // display: none;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+
+        height: 100dvh;
+        transform: translateX(-100%);
+
+        transition: all 0.3s ease;
+
+        button[type="submit"] {
+            display: block;
+        }
+
+        pointer-events: none;
+    }
+
+    .show {
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+
+    .overlayShow {
+        display: block;
     }
 }

@@ -5,11 +5,18 @@ error_reporting(E_ALL);
 session_start();
 date_default_timezone_set("UTC");
 
+require 'vendor/autoload.php';
+use Predis\Client as PredisClient;
+use Detection\MobileDetect;
+
+$name = "SimpelWinkelen";
+
 $loggedIn = false;
 $userData = [];
 $deviceData = [];
 
-$ipAddress = '';
+$ipAddress = "";
+$userAgent = "";
 
 try {
     $conn = new PDO("mysql:host=localhost;dbname=webshop", "tom", "ytz.HMW_pvn!yqv8kpr");
@@ -17,6 +24,14 @@ try {
 } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }   
+
+$redis = new PredisClient([
+    'scheme' => 'tcp',
+    'host'   => '127.0.0.1',
+    'port'   => 6379,
+]);
+
+$deviceDetect = new MobileDetect;
 
 function loadTemplate($templatePath, $variables) {
     $template = file_get_contents($templatePath);
@@ -28,7 +43,7 @@ function loadTemplate($templatePath, $variables) {
 
 function sendMail($templateHtmlPath, $templateAltPath, $variables, $email, $subject){
     global $conn, $userData, $deviceData;
-    $variables['yearDate'] = date('Y');
+    $variables['year'] = date('Y');
     $htmlBody = loadTemplate($templateHtmlPath, $variables);
     $altBody = loadTemplate($templateAltPath, $variables);
     $addedTime = date("Y-m-d H:i:s");
@@ -50,5 +65,30 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $ipAddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
 } else {
     $ipAddress = $_SERVER['REMOTE_ADDR'];
+}
+
+if (isset($_SERVER['HTTP_USER_AGENT'])) {
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+}
+
+if(isset($_COOKIE['token'])){
+    $token = $_COOKIE['token'];
+
+    $deviceCheck = $conn->prepare("SELECT * FROM devices WHERE token = :token");
+    $deviceCheck->bindParam(':token', $token);
+    $deviceCheck->execute();
+
+    if($deviceCheck->rowCount() > 0){
+        $deviceData = $deviceCheck->fetch();
+
+        $userCheck = $conn->prepare("SELECT * FROM users WHERE id = :id");
+        $userCheck->bindParam(':id', $deviceData['userId']);
+        $userCheck->execute();
+
+        if($userCheck->rowCount() > 0){
+            $userData = $userCheck->fetch();
+            $loggedIn = true;
+        }
+    }
 }
 ?>

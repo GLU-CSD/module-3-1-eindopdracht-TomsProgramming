@@ -1,0 +1,14 @@
+Beste gebruiker,
+
+Er is zojuist een nieuwe login op jouw account gedetecteerd bij SimpelWinkelen.
+
+Details van de login:
+- Datum en tijd: {{ loginTime }}
+- IP-adres: {{ ipAddress }}
+- Gebruikt apparaat: {{ device }}
+
+Herken je deze login? Dan kun je deze melding als bevestiging zien dat het account veilig is.
+Mocht je deze login niet herkennen, neem dan direct contact op met onze klantenservice via support@simpelwinkelen.nl.
+
+Met vriendelijke groet,
+Het team van SimpelWinkelen

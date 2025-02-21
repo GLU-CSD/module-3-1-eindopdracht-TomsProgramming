@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SimpelWinkelen - Nieuwe login gedetecteerd</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .email-header {
+            background-color: #0000a3;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .email-header h1 {
+            font-size: 24px;
+            margin: 0;
+            font-weight: 900;
+        }
+
+        .email-body {
+            padding: 20px;
+        }
+
+        .email-body p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .login-info {
+            background-color: #f0f4fc;
+            border: 1px solid #c7c7c7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .email-footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <h1>SimpelWinkelen</h1>
+        </div>
+
+        <div class="email-body">
+            <p>Beste gebruiker,</p>
+            <p>Er is zojuist een nieuwe login op jouw account gedetecteerd bij <strong>SimpelWinkelen</strong>.
+                Mocht dit door jou zijn uitgevoerd, dan kun je deze melding als niet-verstorend beschouwen.
+                Als je hier echter geen actie in hebt ondernomen, neem dan zo snel mogelijk contact met ons op.</p>
+
+            <div class="login-info">
+                <p><strong>Datum en tijd:</strong> {{ loginTime }}</p>
+                <p><strong>IP-adres:</strong> {{ ipAddress }}</p>
+                <p><strong>Gebruikt apparaat:</strong> {{ device }}</p>
+            </div>
+
+            <p>Mocht je deze login niet herkennen, aarzel dan niet om contact op te nemen met onze klantenservice via
+                <a href="mailto:support@simpelwinkelen.nl">support@simpelwinkelen.nl</a>.
+            </p>
+
+            <p>Met vriendelijke groet,<br>
+                Het team van SimpelWinkelen</p>
+        </div>
+
+        <div class="email-footer">
+            &copy; {{ year }} SimpelWinkelen
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+.productsContainer {
+    display: flex;
+    flex-flow: column nowrap;
+
+    max-width: 1200px;
+    margin: 0 auto;
+
+    align-items: start;
+    justify-content: center;
+
+    padding: 20px 0px;
+
+    .category {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 30px;
+        margin-top: 20px;
+
+
+        h2 {
+            flex-basis: 100%;
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .product {
+            // animatie voor producten te laten verschijnen
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateX(-100%);
+            transition: all 1s;
+
+            display: flex;
+            flex-direction: column;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #f4f7fd;
+
+            img {
+                width: 160px;
+            }
+    
+            .productInfo {
+                .brand {
+                    margin-top: 10px;
+                    font-weight: 700;
+                    font-size: 15px;
+                }
+
+                h2 {
+                    font-size: 20px;
+                    font-weight: 700;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+
+                a {
+                    background-color: #0000A3;
+                    color: #ffffff;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    text-decoration: none;
+                    font-weight: 700;
+                    display: block;
+                    text-align: center;
+                    margin-top: 10px;
+    
+                    &:hover {
+                        background-color: #000069;
+                    }
+                }
+            }
+        }
+
+        .show {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
+        }
+    }
+}
+
+@media (max-width: 1250px) {
+    .productsContainer {
+        width: 90%;
+    }
+}

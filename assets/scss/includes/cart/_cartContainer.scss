@@ -1,5 +1,16 @@
 .cartContainer {
     display: flex;
+
+    margin-top: 20px;
+
     gap: 50px;
     justify-content: center;
+}
+
+@media (max-width: 768px) { 
+    .cartContainer {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
 }

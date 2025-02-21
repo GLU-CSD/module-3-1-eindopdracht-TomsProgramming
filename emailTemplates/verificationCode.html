@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SimpelWinkelen - E-mail verificatie</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .email-header {
+            background-color: #0000a3;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .email-header h1 {
+            font-size: 24px;
+            margin: 0;
+            font-weight: 900;
+        }
+
+        .email-body {
+            padding: 20px;
+        }
+
+        .email-body p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .verification-code {
+            display: block;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .email-footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <h1>SimpelWinkelen</h1>
+        </div>
+
+        <div class="email-body">
+            <p>Beste gebruiker,</p>
+            <p>Bedankt voor het aanmaken van een account bij <strong>SimpelWinkelen</strong>! We zijn blij dat je er
+                bent.
+                Om je account te activeren en toegang te krijgen tot alle functies, vragen we je om je e-mailadres te
+                bevestigen.</p>
+
+            <p>Gebruik onderstaande code om je account te verifiëren:</p>
+            <span class="verification-code">{{ code }}</span>
+
+            <p>Mocht je deze e-mail niet hebben aangevraagd of denk je dat er iets niet klopt, neem dan gerust contact met ons op via <a href="mailto:support@simpelwinkelen.nl">support@simpelwinkelen.nl</a>.</p>
+
+            <p>Met vriendelijke groet,<br>
+                Het team van SimpelWinkelen</p>
+        </div>
+
+        <div class="email-footer">
+            &copy; {{ year }} SimpelWinkelen
+        </div>
+    </div>
+</body>
+
+</html>

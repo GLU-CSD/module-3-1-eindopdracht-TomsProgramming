@@ -5,3 +5,11 @@ RewriteRule ^winkelwagen/?$ cart.php [L,QSA]
 RewriteRule ^account/?$ account/index.php [L,QSA]
 RewriteRule ^inloggen/?$ account/login.php [L,QSA]
 RewriteRule ^registreren/?$ account/register.php [L,QSA]
+RewriteRule ^email-verificatie/?$ account/email-verification.php [L,QSA]
+
+# Regel voor URL's in de vorm: /category/brand/model (bijvoorbeeld: /smartphone/apple/iphone-14)
+RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/?$ product.php?category=$1&brand=$2&model=$3 [L,QSA]
+# Regel voor URL's in de vorm: /category/brand (bijvoorbeeld: /smartphone/apple)
+RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/?$ products.php?category=$1&brand=$2 [L,QSA]
+# Regel voor URL's in de vorm: /category (bijvoorbeeld: /smartphone)
+RewriteRule ^([a-zA-Z0-9-]+)/?$ products.php?category=$1 [L,QSA]

@@ -1,0 +1,34 @@
+main {
+    max-width: 90%;
+    margin: 0 auto;
+
+    .filtersButton{
+        display: none;
+
+        width: 90%;
+        margin: 0 auto;
+
+        background-color: #0000A3;
+        color: #ffffff;
+        border: none;
+
+        padding: 1rem;
+        border-radius: 5px;
+
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 10px;
+
+        &:hover {
+            background-color: #000069;
+        }
+    }
+    
+    @media screen and (max-width: 1000px) {
+        .filtersButton{
+            display: block;
+        }
+    }
+}

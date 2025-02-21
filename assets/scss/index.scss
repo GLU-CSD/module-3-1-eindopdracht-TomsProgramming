@@ -4,8 +4,7 @@
 
 @use './includes/contentWrapper';
 @use './includes/sidebar';
-@use './includes/hero';
-@use './includes/productsContainer';
-@use './includes/productDetail';
+@use './includes/index/hero';
+@use './includes/index/productsContainer';
 
 @use './includes/footer';

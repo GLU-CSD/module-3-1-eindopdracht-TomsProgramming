@@ -1,0 +1,12 @@
+Beste gebruiker,
+
+Bedankt voor het aanmaken van een account bij SimpelWinkelen!
+Om je account te verifiëren, gebruik je de volgende code:
+
+{{ code }}
+
+Als je deze e-mail niet zelf hebt aangevraagd of als je vragen hebt, 
+neem dan contact op met onze klantenservice via support@simpelwinkelen.nl.
+
+Met vriendelijke groet,
+Het team van SimpelWinkelen
