@@ -13,13 +13,13 @@ use Detection\MobileDetect;
 $name = "SimpelWinkelen";
 
 $stripeData = [
-    "testPublicKey" => "pk_test_51KTQwKA4T29zbjnhx7k3NCSQsp3t7yu1SPLpnodkLgADhLeWGQCJX2AsYCsT1lNnFKQmavlMJzQoTEhwgJqoIm6m00ZnynhWG5",
-    "testSecretKey" => "sk_test_51KTQwKA4T29zbjnhc7rDRn3fLBcwtN5ETRiDoPwLR9hUkvPcyJgl1urc6IrpaKpG3S04ytZ6urFLNiN6sGfqiK9T002HuRFqrP",
-    "testWebhookSecret" => "whsec_JinMUW3luIUmQLIOCAYe1jzZUf9Z7qGt",
+    "testPublicKey" => "",
+    "testSecretKey" => "",
+    "testWebhookSecret" => "",
 
-    "publicKey" => "pk_live_51KTQwKA4T29zbjnhWqDiT7rxgzP2WVJhdBv6ZSMXNmYRmwpHQeE0orz3qgmanHKTqJRMWbXyjeuX9e54B9bJZaEv00guL31wgC",
-    "secretKey" => "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",
-    "webhookSecret" => "whsec_bbbYmJxFmnvzMGa0ynlcvlWkkImvlRY8"
+    "publicKey" => "",
+    "secretKey" => "",
+    "webhookSecret" => ""
 ];
 
 $stripeTest = false;
@@ -40,7 +40,7 @@ $ipAddress = "";
 $userAgent = "";
 
 try {
-    $conn = new PDO("mysql:host=localhost;dbname=webshop", "tom", "ytz.HMW_pvn!yqv8kpr");
+    $conn = new PDO("mysql:host=;dbname=", "", "");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
