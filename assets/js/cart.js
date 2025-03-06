@@ -1,4 +1,4 @@
-let defaultFunctions, headNav, cart;
+let defaultFunctions, cart, headNav;
 
 async function loadProducts() {
     const checkoutElement = document.querySelector('.cartCheckout');
@@ -42,7 +42,7 @@ async function loadProducts() {
                 <img src="./uploads/img/${itemId}/${item.mainImage}" alt="${item.title}" loading="lazy">
                 <div class="productInfo">
                     <p class="brand">${item.brand}</p>
-                    <h3>iPhone 16 Pro</h3>
+                    <h3>${item.title}</h3>
                     <p class="price">&euro; ${price.toFixed(2).replace('.', ',')}</p>
                     <div class="actions">
                         <div class="quantity">
@@ -172,8 +172,8 @@ function removeItem(itemId) {
 
 document.addEventListener('DOMContentLoaded', async function () {
     defaultFunctions = await import(`./defaultFunctions.js?t=${new Date().getTime()}`);
-    headNav = await import(`./modules/headNav.js?t=${new Date().getTime()}`);
     cart = await import(`./modules/cart.js?t=${new Date().getTime()}`);
+    headNav = await import(`./modules/headNav.js?t=${new Date().getTime()}`);
 
     loadProducts();
 });

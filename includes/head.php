@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo $title ?></title>
-<meta name="description" content="<?php echo $name ?> - Dé plek voor smartphones, tablets en accessoires tegen scherpe prijzen. Bestel eenvoudig online!">
+<meta name="description" content="Op zoek naar betaalbare smartphones, tablets en accessoires? Bij <?php echo $name ?> vind je topdeals en scherpe prijzen. Bestel eenvoudig online!">
 
 <meta property="og:title" content="<?php echo $name ?> - Betaalbare Elektronica">
 <meta property="og:type" content="website">

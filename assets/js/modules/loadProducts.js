@@ -51,3 +51,9 @@ export async function load(productContainer, products) {
         }
     }
 }
+
+export async function addAnitmationToProducts(products) {
+    products.forEach(product => {
+        obServer.observe(product);
+    });
+}

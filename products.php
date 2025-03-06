@@ -66,6 +66,8 @@ if(isset($_GET['category'])){
             <div class="productsContainer"></div>
         </main>
     </div>
+
+    <?php include "includes/footer.php"; ?>
 </body>
 
 </html>

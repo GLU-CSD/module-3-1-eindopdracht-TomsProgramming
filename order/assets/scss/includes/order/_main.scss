@@ -1,0 +1,225 @@
+main {
+    margin: 0;
+    padding: 0;
+
+    height: 100dvh;
+    width: 100dvw;
+
+    display: flex;
+    flex-direction: row;
+
+    .extraInfo {
+        background-color: #f0f4fc;
+        height: 100%;
+        width: 55%;
+
+        border-right: 1px solid #e5e5e5;
+
+        display: flex;
+        justify-content: end;
+        align-items: start;
+
+        .container {
+            margin: 30px;
+            width: 400px;
+
+            h3 {
+                color: #2d3044;
+                font-size: 1.5rem;
+            }
+
+            form {
+                padding: 20px;
+
+                border: 1px solid #e5e5e5;
+                border-radius: 10px;
+
+                background-color: #fff;
+
+                div {
+                    padding: 5px;
+                }
+
+                .houseNumberDiv {
+                    display: flex;
+                    gap: 10px;
+
+                    .input {
+                        padding: 0;
+                        width: 100%;
+
+                        &.houseNumberInput {
+                            width: 60%;
+                        }
+
+                        &.houseNumberSuffixInput {
+                            width: calc(40% + 10px);
+                        }
+                        
+                        #houseNumber {
+                            padding-right: 5px;
+                        }
+
+                        #houseNumberSuffix {
+                            padding-left: 5px;
+                        }
+                    }
+
+                    @media screen and (max-width: 430px) {
+                        flex-direction: column;
+
+                        .input {
+                            &.houseNumberInput {
+                                width: 100%;
+                            }
+
+                            &.houseNumberSuffixInput {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                .input {
+                    position: relative;
+                    padding: 0 5px;
+
+                    input,
+                    select {
+                        width: calc(100% - 10px);
+
+                        padding: 10px;
+                        margin: 5px 0;
+                        border: 1px solid #9C9DA6;
+                        border-radius: 5px;
+                        outline: none;
+
+                        &:focus {
+                            border: 1px solid #007bff;
+                        }
+
+                        &:focus~.label,
+                        &:not(:placeholder-shown)~.label {
+                            padding: 0 5px;
+                            transform: translate(5px, -7.5px);
+                            font-size: 12px;
+                            color: #007bff;
+                            background-color: #fff;
+                        }
+                    }
+
+                    select {
+                        padding-right: 0px;
+                        width: calc(100% + 10px);
+                    }
+
+                    .label {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        padding: 10px;
+                        transform: translate(0, 0);
+
+                        color: #9C9DA6;
+
+                        margin-top: 5px;
+                        margin-left: 7.5px;
+
+                        transition: all 120ms ease-in;
+
+                        pointer-events: none;
+                    }
+
+                    .error {
+                        font-size: 0.9rem;
+                        color: #dc3545;
+                    }
+
+                    &.error {
+                        input {
+                            border: 1px solid #dc3545;
+                        }
+
+                        .label {
+                            color: #dc3545 !important;
+                        }
+                    }
+                }
+
+                .gender,
+                .name,
+                .address,
+                .contact {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .gender {
+                    flex-flow: row wrap;
+                    gap: 10px;
+
+                    select {
+                        width: 50%;
+                    }
+
+                    .error {
+                        font-size: 0.9rem;
+                        color: #dc3545;
+                        width: 100%;
+                        display: block;
+                    }
+                }
+
+                .name {
+                    flex-direction: column;
+                    gap: 10px;
+
+                    #lastNamePrefix {
+                        width: 50%;
+                    }
+                }
+
+                button {
+                    width: 100%;
+                    padding: 10px;
+                    margin: 10px 0;
+
+                    font-size: 1rem;
+
+                    border: 1px solid #E5E5E5;
+                    border-radius: 5px;
+
+                    background-color: #0000A3;
+                    color: #fff;
+
+                    transition: background-color all 0.3s ease;
+
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #000069;
+                    }
+
+                    &:disabled {
+                        background-color: #000069;;
+                        color: #fff;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .extraInfo {
+            width: 100%;
+            border-right: none;
+            justify-content: center;
+
+            .container {
+                margin: 10px 0;
+                width: 95%;
+            }
+        }
+    }
+}

@@ -5,4 +5,13 @@ sass --watch assets/scss/cart.scss:assets/css/cart.css --style=compressed
 sass --watch assets/scss/products.scss:assets/css/products.css --style=compressed
 sass --watch assets/scss/product.scss:assets/css/product.css --style=compressed
 
+
+sass --watch order/assets/scss/order.scss:order/assets/css/order.css --style=compressed
+sass --watch order/assets/scss/pay.scss:order/assets/css/pay.css --style=compressed
+sass --watch order/assets/scss/success.scss:order/assets/css/success.css --style=compressed
+
+
 sass --watch account/assets/scss/main.scss:account/assets/css/main.css --style=compressed
+
+sass --watch myAccount/assets/scss/index.scss:myAccount/assets/css/index.css --style=compressed
+sass --watch myAccount/assets/scss/orders.scss:myAccount/assets/css/orders.css --style=compressed

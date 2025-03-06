@@ -46,23 +46,23 @@ class Products
     { 
         global $conn;
 
-        $selectCategories = $conn->prepare("SELECT name, title FROM categories");
-        $selectCategories->execute();
-        $categories = $selectCategories->fetchAll(PDO::FETCH_ASSOC);
+        // $selectCategories = $conn->prepare("SELECT name, title FROM categories");
+        // $selectCategories->execute();
+        // $categories = $selectCategories->fetchAll(PDO::FETCH_ASSOC);
 
-        $data = [];
+        // $data = [];
 
-        $selectProducts = $conn->prepare("SELECT id, category, brand, name, title, price, mainImage FROM products WHERE category = :category ORDER BY createdAt DESC LIMIT 5");
-        foreach ($categories as $category) {
-            $selectProducts->bindParam(':category', $category['name']);
-            $selectProducts->execute();
-            $products = $selectProducts->fetchAll(PDO::FETCH_ASSOC);
+        // $selectProducts = $conn->prepare("SELECT id, category, brand, name, title, price, mainImage FROM products WHERE category = :category ORDER BY createdAt DESC LIMIT 5");
+        // foreach ($categories as $category) {
+        //     $selectProducts->bindParam(':category', $category['name']);
+        //     $selectProducts->execute();
+        //     $products = $selectProducts->fetchAll(PDO::FETCH_ASSOC);
 
-            $data[$category['name']] = [
-                "title" => $category['title'],
-                "products" => $products
-            ];
-        }
+        //     $data[$category['name']] = [
+        //         "title" => $category['title'],
+        //         "products" => $products
+        //     ];
+        // }
 
         return json_encode(array("success" => true, "data" => $data));  
     }

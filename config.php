@@ -2,6 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 session_start();
 date_default_timezone_set("UTC");
 
@@ -11,6 +12,26 @@ use Detection\MobileDetect;
 
 $name = "SimpelWinkelen";
 
+$stripeData = [
+    "testPublicKey" => "pk_test_51KTQwKA4T29zbjnhx7k3NCSQsp3t7yu1SPLpnodkLgADhLeWGQCJX2AsYCsT1lNnFKQmavlMJzQoTEhwgJqoIm6m00ZnynhWG5",
+    "testSecretKey" => "sk_test_51KTQwKA4T29zbjnhc7rDRn3fLBcwtN5ETRiDoPwLR9hUkvPcyJgl1urc6IrpaKpG3S04ytZ6urFLNiN6sGfqiK9T002HuRFqrP",
+    "testWebhookSecret" => "whsec_JinMUW3luIUmQLIOCAYe1jzZUf9Z7qGt",
+
+    "publicKey" => "pk_live_51KTQwKA4T29zbjnhWqDiT7rxgzP2WVJhdBv6ZSMXNmYRmwpHQeE0orz3qgmanHKTqJRMWbXyjeuX9e54B9bJZaEv00guL31wgC",
+    "secretKey" => "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",
+    "webhookSecret" => "whsec_bbbYmJxFmnvzMGa0ynlcvlWkkImvlRY8"
+];
+
+$stripeTest = false;
+
+$stripePublicKey = $stripeTest ? $stripeData['testPublicKey'] : $stripeData['publicKey'];
+$stripeSecretKey = $stripeTest ? $stripeData['testSecretKey'] : $stripeData['secretKey'];
+$stripeWebhookSecret = $stripeTest ? $stripeData['testWebhookSecret'] : $stripeData['webhookSecret'];
+
+\Stripe\Stripe::setApiKey($stripeSecretKey);
+
+$postcodeApiKey = "559426e5-a309-4854-9202-76b28d40a49e";
+
 $loggedIn = false;
 $userData = [];
 $deviceData = [];
@@ -19,7 +40,7 @@ $ipAddress = "";
 $userAgent = "";
 
 try {
-    $conn = new PDO("mysql:host=localhost;dbname=u240066_webshop", "u240066_webshop", "VM6Q9kYpZgTgpvN83kqy");
+    $conn = new PDO("mysql:host=localhost;dbname=webshop", "tom", "ytz.HMW_pvn!yqv8kpr");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();

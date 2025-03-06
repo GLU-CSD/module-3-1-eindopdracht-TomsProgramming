@@ -1,0 +1,52 @@
+.cartSide {
+    height: 100%;
+    width: 45%;
+
+    display: flex;
+    justify-content: start;
+    align-items: start;
+
+    .cart{
+        border: 1px solid #E5E5E5;
+        border-radius: 20px;
+
+        margin: 30px;
+        padding: 20px 30px;
+
+        table {
+            td {
+                padding: 10px;
+            }
+
+            .product {
+
+                .image img {
+                    display: block;
+                    height: 60px;
+                }
+    
+                .name {
+                    font-weight: 600;
+                    max-width: 200px;
+                    line-break: anywhere;
+                }
+            }
+
+            .shipping, .total {
+                .name {
+                    font-weight: 400;
+                }
+
+                .price {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .cartSide {
+        display: none;
+    }
+}

@@ -24,6 +24,12 @@ if(isset($_GET['category'], $_GET['brand'], $_GET['model'])){
         $description = str_replace('\u0027', "'", $product['description']);
 
         $title = $product['title'] . " - " . $name;
+
+        $get5Products = $conn->prepare("SELECT * FROM products WHERE category = :category AND name != :name LIMIT 5");
+        $get5Products->bindParam(':category', $category);
+        $get5Products->bindParam(':name', $model);
+        $get5Products->execute();
+        $randomProducts = $get5Products->fetchAll();
 ?>
 <!doctype html>
 <html class="noJs" lang="nl">
@@ -40,9 +46,52 @@ if(isset($_GET['category'], $_GET['brand'], $_GET['model'])){
     <?php include "includes/headNav.php"; ?>
 
     <main>
+        <div class="addedToCard">
+            <div class="head">
+                <svg width="32" height="32" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8m3.82-11.51a.5.5 0 0 0-.7 0l-4.74 4.74-1.5-1.49a.48.48 0 0 0-.7 0l-.53.53a.5.5 0 0 0 0 .71L10 15.35a.48.48 0 0 0 .7 0l5.62-5.62a.5.5 0 0 0 0-.71Z">
+                    </path>
+                </svg>
+                <p>Het artikel is succesvol toegevoegd aan je winkelwagen</p>
+                <button class="close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="scroll">
+                <div class="product">
+                    <img src="/uploads/img/<?php echo $product['id'] ?>/<?php echo $mainImage ?>"
+                        alt="<?php echo $prodcutTitle ?>" />
+                    <div class="info">
+                        <p class="name"><?php echo $prodcutTitle ?></p>
+                        <p class="price">€ <?php echo $price ?></p>
+                    </div>
+                </div>
+                <div class="otherProducts">
+                    <p class="headText">Misschien ben je ook geïnteresseerd in</p>
+                    <div class="productsContainer">
+                        <?php foreach($randomProducts as $randomProduct){ ?>
+                        <a class="product"
+                            href="/product/<?php echo $category ?>/<?php echo $brand ?>/<?php echo $randomProduct['name'] ?>">
+                            <img src="/uploads/img/<?php echo $randomProduct['id'] ?>/<?php echo $randomProduct['mainImage'] ?>"
+                                alt="<?php echo $randomProduct['title'] ?>" />
+                            <div class="info">
+                                <p class="name"><?php echo $randomProduct['title'] ?></p>
+                                <p class="price">€ <?php echo str_replace('.', ',', $randomProduct['price']) ?></p>
+                            </div>
+                        </a>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <a href="/winkelwagen" class="ctaButton">Bekijk winkelwagen</a>
+                <button class="ctaButton close">Verder winkelen</button>
+            </div>
+        </div>
+        <div class="addedToCardOverlay"></div>
         <section class="productDetail">
             <div class="productImage">
-                <img src="/uploads/img/<?php echo $product['id'] ?>/<?php echo $mainImage ?>" alt="<?php echo $prodcutTitle ?>" />
+                <img src="/uploads/img/<?php echo $product['id'] ?>/<?php echo $mainImage ?>"
+                    alt="<?php echo $prodcutTitle ?>" />
             </div>
             <div class="productInfo">
                 <h1 class="productName"><?php echo $prodcutTitle ?></h1>

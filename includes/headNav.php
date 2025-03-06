@@ -9,10 +9,8 @@
             <input type="text" id="searchInput" name="q" placeholder="Waar ben je naar op zoek?">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
-        <button onclick="window.location = '/account';" class="rightSideBtn user"><i
-                class="fa-regular fa-user"></i></button>
-        <button onclick="window.location = '/winkelwagen';" class="rightSideBtn cart"><i
-                class="fa fa-shopping-cart"></i></button>
+        <button onclick="window.location = '/account';" class="rightSideBtn user"><i class="fa-regular fa-user"></i></button>
+        <button onclick="window.location = '/winkelwagen';" class="rightSideBtn cart"><i class="fa fa-shopping-cart"></i> <span class="cartQuantity"></span></button>
     </div>
 
     <div class="bottom">

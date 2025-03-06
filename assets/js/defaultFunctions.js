@@ -1,5 +1,5 @@
-export function fetchData(body) {
-    return fetch('assets/php/functions.php', {
+export function fetchData(body, url = '/assets/php/functions.php') {
+    return fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

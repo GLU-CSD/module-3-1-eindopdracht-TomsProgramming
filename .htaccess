@@ -1,15 +1,52 @@
+# Schakel mod_rewrite in
 RewriteEngine On
 RewriteBase /
 
+# SEO-vriendelijke 404-foutpagina
+ErrorDocument 404 /404.php
+
+# Standaardpagina's voor de webshop
 RewriteRule ^winkelwagen/?$ cart.php [L,QSA]
 RewriteRule ^account/?$ account/index.php [L,QSA]
 RewriteRule ^inloggen/?$ account/login.php [L,QSA]
 RewriteRule ^registreren/?$ account/register.php [L,QSA]
 RewriteRule ^email-verificatie/?$ account/email-verification.php [L,QSA]
 
-# Regel voor URL's in de vorm: /category/brand/model (bijvoorbeeld: /smartphone/apple/iphone-14)
+RewriteRule ^mijn-account/?$ myAccount/index.php [L,QSA]
+RewriteRule ^mijn-account/bestellingen/?$ myAccount/orders.php [L,QSA]
+
+RewriteRule ^bestellen/?$ order/order.php [L,QSA]
+RewriteRule ^bestellen/betalen/?$ order/pay.php [L,QSA]
+RewriteRule ^bestellen/proces/?$ order/process.php [L,QSA]
+RewriteRule ^bestellen/bedankt/?$ order/success.php [L,QSA]
+
+RewriteRule ^stripe/webhook/?$ stripe/webhook.php [L,QSA]
+
+# Dynamische product- en categorie-URL's
 RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/?$ product.php?category=$1&brand=$2&model=$3 [L,QSA]
-# Regel voor URL's in de vorm: /category/brand (bijvoorbeeld: /smartphone/apple)
 RewriteRule ^([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/?$ products.php?category=$1&brand=$2 [L,QSA]
-# Regel voor URL's in de vorm: /category (bijvoorbeeld: /smartphone)
 RewriteRule ^([a-zA-Z0-9-]+)/?$ products.php?category=$1 [L,QSA]
+
+# Beveiliging: Voorkom toegang tot gevoelige bestanden
+<FilesMatch "\.(htaccess|htpasswd|env|config|sql|log)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Zorg ervoor dat niet-bestaande bestanden en mappen naar 404.php gaan
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /404.php [L]
+
+# Schakel browser caching in voor betere prestaties
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 week"
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 6 months"
+    ExpiresByType image/png "access plus 6 months"
+    ExpiresByType image/gif "access plus 6 months"
+    ExpiresByType application/pdf "access plus 1 month"
+</IfModule>

@@ -83,10 +83,13 @@
             transform: translateX(0);
         }
     }
-}
 
-@media (max-width: 1250px) {
-    .productsContainer {
+    @media (max-width: 1250px) {
         width: 90%;
+        text-align: center;
+    
+        .category {
+            justify-content: center;
+        }
     }
 }

@@ -1,6 +1,7 @@
 {
     "require": {
         "predis/predis": "^2.3",
-        "mobiledetect/mobiledetectlib": "^4.8"
+        "mobiledetect/mobiledetectlib": "^4.8",
+        "stripe/stripe-php": "^16.6"
     }
 }

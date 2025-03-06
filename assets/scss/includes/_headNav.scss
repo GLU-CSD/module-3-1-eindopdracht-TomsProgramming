@@ -76,6 +76,18 @@
 
         .cart {
             right: 30px;
+
+            .cartQuantity{
+                display: none;
+                position: absolute;
+                top: -3px;
+                right: -5px;
+                background-color: #FFBF00;
+                color: #0000A3;
+                font-size: 12px;
+                padding: 0.3em 0.6em;
+                border-radius: 50%;
+            }
         }
 
         .burger {

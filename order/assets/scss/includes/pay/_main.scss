@@ -1,0 +1,155 @@
+main {
+    margin: 0;
+    padding: 0;
+
+    height: 100dvh;
+    width: 100dvw;
+
+    display: flex;
+    flex-direction: row;
+
+    .container {
+        background-color: #f0f4fc;
+        height: 100%;
+        width: 55%;
+
+        border-right: 1px solid #e5e5e5;
+
+        display: flex;
+        justify-content: end;
+        align-items: start;
+
+
+
+        .paymentMethodsContainer {
+            margin: 30px;
+            padding: 20px;
+
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+
+            background-color: #fff;
+
+            min-width: 400px;
+
+            .paymentMethods {
+                margin: 25px 0;
+
+                display: flex;
+                flex-flow: row wrap;
+                gap: 20px;
+
+                .method {
+                    width: 30%;
+                    min-width: 150px;
+
+                    position: relative;
+                    background: #f2f4f7;
+
+                    border: 2px solid #e8ebed;
+                    padding: 25px;
+
+                    box-sizing: border-box;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    text-align: center;
+                    transition: all 0.5s ease;
+
+                    &:hover {
+                        border-color: #28333b;
+
+                        .logo,
+                        p {
+                            color: #28333b;
+                        }
+                    }
+
+                    &.selected {
+                        border-color: #0000a3;
+                        background: rgba(64, 179, 255, 0.1);
+
+                        .logo {
+                            color: #0000a3;
+                        }
+
+                        p {
+                            color: #28333b;
+                        }
+
+                        &::after {
+                            content: '\f00c';
+                            font-family: 'Font Awesome 5 Free';
+                            font-weight: 900;
+                            position: absolute;
+                            height: 40px;
+                            width: 40px;
+                            top: -21px;
+                            right: -21px;
+                            background: #fff;
+                            border: 2px solid #0000a3;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+
+                    .logo,
+                    p {
+                        transition: all 0.5s ease;
+                    }
+
+                    .logo {
+                        font-size: 48px;
+                        color: #8a959c;
+                    }
+
+                    p {
+                        margin-bottom: 0;
+                        font-size: 10px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        letter-spacing: 0.5px;
+                        color: #8a959c;
+                    }
+                }
+            }
+
+            .payButton {
+                width: 100%;
+                padding: 10px;
+
+                font-size: 1rem;
+
+                border: 1px solid #E5E5E5;
+                border-radius: 5px;
+
+                background-color: #0000A3;
+                color: #fff;
+
+                transition: background-color all 0.3s ease;
+
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #000069;
+                }
+
+                &:disabled {
+                    background-color: #00005f;
+                    color: #fff;
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .container {
+            width: 100%;
+            border-right: none;
+            justify-content: center;
+
+        }
+    }
+}
