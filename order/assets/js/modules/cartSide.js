@@ -27,7 +27,7 @@ export async function load() {
         const price = parseFloat(item.price) * cartItemQuantity;
 
         totalProducts += cartItemQuantity;
-        totalPriceNum += price * cartItemQuantity;
+        totalPriceNum += price;
 
         const productElement = document.createElement('tr');
         productElement.classList.add('product');
