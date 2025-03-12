@@ -180,6 +180,11 @@ document.addEventListener('DOMContentLoaded', async function () {
             return;
         }
 
+        if(document.querySelector('input[name="gender"]:checked') === null) {
+            showError(document.querySelector('.gender'), "Geslacht is verplicht");
+            return;   
+        }
+
         const data = await defaultFunctions.fetchData({
             products: JSON.stringify(cart.getItems()),
             gender: document.querySelector('input[name="gender"]:checked').value,

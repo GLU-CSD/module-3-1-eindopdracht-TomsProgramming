@@ -28,9 +28,9 @@
                 </div>
                 <div class="rangePrice">
                     <label for="min">Min</label>
-                    <input type="number" name="min" value="0">
+                    <input type="number" id="min" name="min" value="0">
                     <label for="max">Max</label>
-                    <input type="number" name="max" value="<?php echo intval($highestPrice) ?>">
+                    <input type="number" id="max" name="max" value="<?php echo intval($highestPrice) ?>">
                 </div>
             </div>
         </div>

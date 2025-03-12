@@ -28,16 +28,16 @@ $title = "Bestellen - " . $name;
                 <form class="orderForm">
                     <div class="gender">
                         <div class="radio">
-                            <input type="radio" name="gender" value="Dhr.">
-                            <label for="Dhr.">Dhr.</label>
+                            <input type="radio" id="dhr" name="gender" value="Dhr.">
+                            <label for="dhr">Dhr.</label>
                         </div>
                         <div class="radio">
-                            <input type="radio" name="gender" value="Mevr.">
-                            <label for="Mevr.">Mevr.</label>
+                            <input type="radio" id="mevr" name="gender" value="Mevr.">
+                            <label for="mevr">Mevr.</label>
                         </div>
                         <div class="radio">
-                            <input type="radio" name="gender" value="...">
-                            <label for="...">...</label>
+                            <input type="radio" id="other" name="gender" value="...">
+                            <label for="other">...</label>
                         </div>
                     </div>
 
@@ -59,10 +59,11 @@ $title = "Bestellen - " . $name;
                     <div class="address">
                         <div class="input">
                             <select name="country" id="country" required>
-                                <option value="country" disabled selected>Land</option>
+                                <option value="" disabled selected>Kies een land</option>
                                 <option value="netherlands">Nederland</option>
                                 <option value="belgium">België</option>
                             </select>
+
                             <span class="label">Land</span>
                         </div>
 
@@ -73,8 +74,7 @@ $title = "Bestellen - " . $name;
 
                         <div class="houseNumberDiv">
                             <div class="input houseNumberInput">
-                                <input type="number" name="houseNumber" id="houseNumber" maxlength="10" placeholder
-                                    required>
+                                <input type="number" name="houseNumber" id="houseNumber" placeholder required>
                                 <span class="label">Huisnummer</span>
                             </div>
                             <div class="input houseNumberSuffixInput">
@@ -106,14 +106,15 @@ $title = "Bestellen - " . $name;
                             <span class="label">Telefoonnummer</span>
                         </div>
                         <div class="input">
-                            <input type="date" name="dateOfBirth" id="dateOfBirth" placeholder required>
+                            <input type="date" name="dateOfBirth" id="dateOfBirth" required>
                             <span class="label">Geboortedatum</span>
                         </div>
                     </div>
 
                     <div class="termsAndConditionsDiv">
                         <input type="checkbox" name="termsAndConditions" id="termsAndConditions" required>
-                        <label for="termsAndConditions">Ik ga akkoord met de <a href="/algemene-voorwaarden" target="_blank">algemene voorwaarden</a></label>
+                        <label for="termsAndConditions">Ik ga akkoord met de <a href="/algemene-voorwaarden"
+                                target="_blank">algemene voorwaarden</a></label>
                     </div>
 
                     <button class="submitBtn" type="submit" disabled>Verder naar betalen</button>
