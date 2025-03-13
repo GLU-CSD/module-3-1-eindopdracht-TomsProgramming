@@ -28,7 +28,7 @@ $title = "Bestellen - " . $name;
                 <form class="orderForm">
                     <div class="gender">
                         <div class="radio">
-                            <input type="radio" id="dhr" name="gender" value="Dhr.">
+                            <input type="radio" id="dhr" name="gender" value="Dhr." required>
                             <label for="dhr">Dhr.</label>
                         </div>
                         <div class="radio">
